@@ -11,6 +11,7 @@ par(mfrow=c(3,6))
 # calculate fit for each of the top 18 countrys
 # using R0 package and sequential bayesian method
 # See https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-147
+gt <- generation.time('gamma', c(1, 3))
 for( country in countries ){
    # extract data for country
    ts <- apply( subset(cases_by_country, Country.Region == country)[,5:ncol(cases_by_country)], 2, sum)
